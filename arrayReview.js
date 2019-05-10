@@ -113,7 +113,6 @@ capitalize(myPoem)
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
 
-const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 function vowelCounter(string) {
   let vowels = 'aeiouAEIOU';

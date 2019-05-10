@@ -11,6 +11,8 @@ var callFriend = function(){
 
   //code here
 
+  let callBestie = callFriend();
+  callBestie('435-215-9248');
 
 
 /*
