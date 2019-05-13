@@ -19,6 +19,47 @@ var callFriend = function(){
 
 Write a function that accepts a function as it's first argument and returns a new function (which calls the original function that was passed in) that can only ever be executed once.
 
+
 Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
 
 */
+
+function meower(func) {
+  let meow = false;
+  return function() {
+    if (!meow) {
+      console.log('meow');
+      func();
+      meow = true;
+    } else return 'STAHHP'
+  }
+}
+
+
+let cat = meower(function(){
+  return 'meow';
+})
+
+//Part2
+
+function limitCat(func, n){
+  let counter = 0;
+  return function(){
+    if (counter < n) {
+      func();
+      counter += 1
+    } else return 'STAHHHP'
+  }
+}
+
+function meowing(){
+  console.log('meowing');
+  return
+}
+
+meowing = limitCat(meowing, 3);
+meowing();
+meowing();
+meowing();
+meowing();
+
