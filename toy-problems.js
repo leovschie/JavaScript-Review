@@ -8,11 +8,12 @@ plusOneSum([1, 2, 3, 4]); // 14
 
 */
 
-let plusOneSum = [1,2,3,4];
+let plusOneSum = [1, 2, 3, 4];
 
-function addThemPlusOne(array){
-    let x = array.reduce((a,b) => a+b);
-    return x + array.length}
+function addThemPlusOne(array) {
+  let x = array.reduce((a, b) => a + b);
+  return x + array.length
+}
 
 addThemPlusOne(plusOneSum);
 
@@ -33,15 +34,31 @@ function flattenArray(array) {
   return array.flat(2)
 }
 
-  flattenArray(flatten)
+flattenArray(flatten)
 
-/*
+/* Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN]
+convert it to [a1, b1, c1, a2, b2, c2, ..., aN, bN, cN] */
 
-Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN] convert it to [a1, b1, c1, a2, b2, c2, ..., aN, bN, cN]
+function sortArray(array) {
+  let reverseArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let splitString = array[i].split('');
+    let reverserer = splitString[1] + splitString[0];
+    reverseArray.push(reverserer);
+  }
+  let newArray = reverseArray.sort();
+  let reverseNewArray = [];
+  for (let j = 0; j < array.length; j++) {
+    let splitStringNew = newArray[j].split("");
+    let newNewReversed = splitStringNew[1] + splitStringNew[0];
+    reverseNewArray.push(newNewReversed);
+  }
+  return reverseNewArray;
+}
 
-*/
 
-// I could not figure this out...
+let testArray = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+sortArray(testArray);
 
 /*
 
@@ -81,9 +98,10 @@ function returnLongestWord(string) {
   let longestWord = "";
   for (let i = 0; i < stringArray.length; i++) {
     if (longestWord.length < stringArray[i].length) {
-      if (longestWord != longestWord){
-      longestWord = stringArray[i];
-    }}
+      if (longestWord != longestWord) {
+        longestWord = stringArray[i];
+      }
+    }
   }
   return longestWord;
 }
@@ -99,18 +117,18 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 let arrayToThousand = []
 
-for(var i = 1; i < 1000; i++){
-    arrayToThousand.push(i);
+for (var i = 1; i < 1000; i++) {
+  arrayToThousand.push(i);
 }
 
-function arraySum(array){
-  return array.reduce(function(a,b){
-    return a+b
+function arraySum(array) {
+  return array.reduce(function (a, b) {
+    return a + b
   }, 0);
 }
 
 function sumOfTables(array) {
-  let results = array.filter(x => x % 3 === 0 || x %5 === 0);
+  let results = array.filter(x => x % 3 === 0 || x % 5 === 0);
   return arraySum(results);
 }
 
@@ -122,7 +140,7 @@ Remove duplicate characters in a given string keeping only the first occurrences
 
 */
 
-function findUniqueChars(string){
+function findUniqueChars(string) {
   let charArray = string.split('');
   return Array.from(new Set(charArray)).join('');
 }
@@ -137,10 +155,10 @@ console.log(sum(2)(3));  // Outputs 5
 
 */
 
-function sum(x,y) {
-  if (y === undefined){
-    return function(z) {
+function sum(x, y) {
+  if (y === undefined) {
+    return function (z) {
       return x + z
     }
-  } else return (x)+(y);
+  } else return (x) + (y);
 }

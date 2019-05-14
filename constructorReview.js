@@ -1,26 +1,26 @@
 //Create a Animal Constructor that has the following parameters. species, name, legs, color, food (which is an array of foods they can eat).
 
 class Animal {
-  constructor (species, name, legs, color, food) {
+  constructor(species, name, legs, color, food) {
 
-   
-   this.species = species;
-   this.name = name;
-   this.legs = legs;
-   this.color = color;
-   this.food = food;
 
- }
+    this.species = species;
+    this.name = name;
+    this.legs = legs;
+    this.color = color;
+    this.food = food;
+
+  }
 }
 
 
 //Now create a person function that creates an object and returns it (not in constructor form) that has the following parameters. name, age, height, gender
 
-function personCreator(name, age, height, gender){
+function personCreator(name, age, height, gender) {
   let object = {
-    name: name ,
-    age: age ,
-    height: height ,
+    name: name,
+    age: age,
+    height: height,
     gender: gender,
   }
   return object;
@@ -35,8 +35,8 @@ let person = [];
 
 //Create two instances of Animal and push those into your animal array
 
-let animalOne = new Animal ('cow', 'johnny', 4, 'brown', ['hay', 'little cows']);
-let animalTwo = new Animal ('cat', 'susan', 4, 'violet', ['dogs', 'metal', 'tuna'])
+let animalOne = new Animal('cow', 'johnny', 4, 'brown', ['hay', 'little cows']);
+let animalTwo = new Animal('cat', 'susan', 4, 'violet', ['dogs', 'metal', 'tuna'])
 
 animal.push(animalOne, animalTwo);
 
@@ -51,16 +51,16 @@ person.push(person1, person2);
 
 //Now we want every instance of Animal to have a eat method. This method will choose a random item in that instances food array, then alert "(name) ' ate ' (whichever food was chosen)".
 
-Animal.prototype.eat = function(text) {
+Animal.prototype.eat = function (text) {
   alert(`${this.name} ate ${this.food[Math.floor(Math.random() * this.food.length)]}`)
-  }
+}
 
 
 //At this point, if we wanted to add something to every istance of person could we? 
 
-  //Yes or no? and why or why not?
-  
-  /* No you could not, because with the constructor class, all instances are children of the parent class, so they take over the properties  from their parent. By adding to the constructor class, all instances can be altered. However, the person instances are not connected and do not receive properties from a parent as they don't have one!
+//Yes or no? and why or why not?
+
+/* No you could not, because with the constructor class, all instances are children of the parent class, so they take over the properties  from their parent. By adding to the constructor class, all instances can be altered. However, the person instances are not connected and do not receive properties from a parent as they don't have one!
 
 
 /*

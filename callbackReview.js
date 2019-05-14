@@ -4,12 +4,12 @@
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-function first (array, chicken){
+function first(array, chicken) {
   let firstName = array[0];
   chicken(firstName);
 }
 
-first(names, function(firstName){
+first(names, function (firstName) {
   console.log('The first name in names is ', firstName)
 });
 
@@ -18,14 +18,14 @@ first(names, function(firstName){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
-function last (array, chicken){
+function last(array, chicken) {
   let lastName = array[6];
   chicken(lastName);
 }
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-last(names, function(lastName){
+last(names, function (lastName) {
   console.log('The last name in names is ', lastName);
 });
 
@@ -36,14 +36,14 @@ last(names, function(lastName){
 
 //have the contains function return a boolean value for if the name is in the array or not.
 
-function contains(string, array, callback){
+function contains(string, array, callback) {
   let yes = array.includes(string);
-  callback(yes) 
+  callback(yes)
 }
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-contains('Colt', names, function(yes){
-  if(yes){
+contains('Colt', names, function (yes) {
+  if (yes) {
     console.log('Colt is in the array');
   } else {
     console.log('Colt is not in the list');
@@ -58,17 +58,17 @@ contains('Colt', names, function(yes){
 
 
 
-var numbers = [1,2,3,4,5];
+var numbers = [1, 2, 3, 4, 5];
 //Produces a new array of values by mapping each value in list through a transformation function
-map(numbers, function(num){
+map(numbers, function (num) {
   return num * 2; //returns an array of [2,4,6,8,10]
 });
 
 
-function map(array, funky){
+function map(array, funky) {
   let array2 = array.slice(0, array.length);
-  for (let x = 0; x < array2.length; x++){
-  array2[x] = funky(array2[x]);
+  for (let x = 0; x < array2.length; x++) {
+    array2[x] = funky(array2[x]);
   }
   return array2
 }
@@ -84,13 +84,13 @@ function map(array, funky){
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-uniq(names, function(uniqArr){
+uniq(names, function (uniqArr) {
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 
 function uniq(array, func) {
   let newArray = [];
-  for (let i = 0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++) {
     let match;
     for (let y = 0; y < newArray.length; y++) {
       if (array[i] === newArray[y]) {
@@ -113,7 +113,7 @@ function uniq(array, func) {
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-each(names, function(item, indice){
+each(names, function (item, indice) {
   console.log('The item in the ' + indice + 'position is ' + item)
 });
 
@@ -129,8 +129,7 @@ function each(array, callback) {
 
 
 
-var users = [
-  {
+var users = [{
     id: '12d',
     email: 'tyler@gmail.com',
     name: 'Tyler',
@@ -149,18 +148,18 @@ var users = [
     address: '192 East 32 North'
   },
 ];
-getUserById('16t', users, function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + 'the name of ' + user.name + ' and the address of ' + user.address); 
+getUserById('16t', users, function (user) {
+  console.log('The user with the id 16t has the email of ' + user.email + 'the name of ' + user.name + ' and the address of ' + user.address);
 });
 
 function getUserById(userId, array, callbackie) {
   let user;
   for (let i = 0; i < array.length; i++) {
-    if(array[i].id === userId) {
+    if (array[i].id === userId) {
       user = array[i];
-    } 
+    }
   }
- callbackie(user); 
+  callbackie(user);
 }
 
 
@@ -172,18 +171,18 @@ function getUserById(userId, array, callbackie) {
 
 
 //Looks through each value in the list, returning the first one that passes a truth test 
-var numbers  = [1, 2, 3, 4, 5, 6];
-find(numbers, function(num){ 
+var numbers = [1, 2, 3, 4, 5, 6];
+find(numbers, function (num) {
   return num % 2 == 0; //should return 2
 })
 
 function find(array, callby) {
   let numba;
-  for(let i = 0; i < array.length; i++){
-    if(array[i] % 2 == 0){
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 == 0) {
       numba = array[i]
       return numba
     }
     callby(numba);
-}
+  }
 }
